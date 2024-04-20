@@ -86,7 +86,6 @@ else:
     # 呈現聊天紀錄
     for message in get_session_history(cookie_manager.get("session_id")).messages:
         message = dict(message)
-        print(message)
         if "AI" in message["type"]:
             with st.chat_message("assistant"):
                 st.markdown(message["content"])
