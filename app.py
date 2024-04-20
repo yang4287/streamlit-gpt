@@ -77,9 +77,9 @@ else:
     st.subheader("盡情地聊天吧!")
 
     if clear_chat_button := st.button("清除聊天以建立新聊天"):
-        cookie_manager.delete(cookie="session_id")
         # 刪除該 session_id 的聊天紀錄
         get_session_history(cookie_manager.get("session_id")).clear()
+        cookie_manager.delete(cookie="session_id")
         # 建立新session_id
         set_seesion_id()
 
